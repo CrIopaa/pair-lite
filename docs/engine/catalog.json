@@ -1,0 +1,75 @@
+{
+  "rows": [
+    {
+      "id": "stronger_selective",
+      "title": "Selective bounce \u00b7 episode rebound\u22651z",
+      "group": "Selective system",
+      "description": "Later BOUNCE 1 refinement of the original strict daily entry edge. This adds a gate; it does not replace the 0.75z last 20-day rebound test or create a delayed retry.",
+      "conditions": [
+        "Weekly top 150 by previous 30 completed daily quote volume, then 365-day listing age.",
+        "Prior 180 daily log-ratio SD 0.03\u20130.60, unaugmentedDF\u2264\u22122.86, trendR\u00b2<0.50.",
+        "Before the dip:180-day drift\u22640.7SD; \u22655 opposite \u00b11SD transitions; every third spans \u00b10.8SD.",
+        "Last 20-day z-low\u2264\u22123 and \u22652 days old; rebound\u22650.75z; currentz\u2264\u22121 and rising; first eligible condition edge only.",
+        "Episode log fall\u22650.5 (39.35% ratio decline); short 3-day quote volume\u2265preceding 30-day mean.",
+        "Seven-day historical pair carry must be\u2265\u22120.5% per day. Missing carry blocks eligibility; price matches remain visible as unverified.",
+        "Additionally current z\u2212canonical episode minimum z\u22651."
+      ],
+      "sources": [
+        "research/scripts/scan34.js",
+        "research/refinement/round6_indicators/registry.json"
+      ],
+      "engine": "core",
+      "status": "Research screen",
+      "variant": "BOUNCE1"
+    },
+    {
+      "id": "opposing_coin_bias",
+      "title": "Opposing coin bias \u00b7 strongest long versus strongest short",
+      "group": "Start here",
+      "description": "Rank combinations of coins with strong opposing net directional votes across confirmed daily/4h setups. For example, a frequently qualifying long coin against a frequently qualifying short coin.",
+      "conditions": [
+        "Vote source: fixed daily/4h First 20-style composite, including strict/broad range turns and extreme recoveries. Only actually confirmed families vote; pump-only or other watch setups do not. This is NOT a rerun of every catalog model.",
+        "Each distinct qualifying oriented pair contributes one long vote to its numerator and one short vote to its denominator. Multiple windows/families collapse. If both directions qualify, abstain on both.",
+        "Net coin bias = long votes minus short votes. Cross every positive-net coin with every negative-net coin. Zero nets are excluded; fresh synchronized snapshot marks required.",
+        "Rank by harmonic mean of the two positive directional net strengths:2\u00d7longNet\u00d7shortStrength/(longNet+shortStrength). Then combined net strength and directional agreement. This favours strong evidence on both sides; no expected-profit or probability claim.",
+        "Show BOTH long/short counts for each coin, their nets, range/extreme vote splits and whether the proposed pair directly qualified. Opposing individual biases alone do not confirm the cross-pair setup; those rows remain Watch.",
+        "Count full-universe sources before applying default held-token exclusion to final combinations. Daily/4h/1h selector changes chart detail only. Full per-coin counterpart evidence saved with each run.",
+        "Counts share tokens and market events and unequal history coverage. Indicative funding/spread/volume remain context; no verified execution eligibility, market neutrality or future return established. Existing searches and saved positions unchanged."
+      ],
+      "sources": [
+        "research/opposing_bias_search_2026-10-20/contract.json",
+        "setup-search/opposing_bias.py",
+        "research/first20_search_2026-10-20/contract.json"
+      ],
+      "engine": "opposing_bias",
+      "status": "Research screen",
+      "frame": "daily",
+      "revision": "2026-10-20-opposing-bias-v1"
+    },
+    {
+      "id": "clean_bases",
+      "title": "Clean bases & highs \u00b7 screenshot-style daily ranges",
+      "group": "Start here",
+      "description": "Reusable numerical screen behind the 20October clean-bases TradingView list. Finds repeated low/high zones and cleaner swings, including recent bases after older trends. Visual review remains necessary.",
+      "conditions": [
+        "Fixed 90/180/360 completed DAILY formations, excluding the latest completed close from fitting. All available unordered current-contract pairs; held-token toggle applied after scanning.",
+        "Inherited broad geometry:10th/90th log-close band at least 10%; each third width 0.45\u20131.8 times whole; at least 5 opposite 20/80edge transitions and 2 completed trough/peak phases each. First/final censored phases excluded.",
+        "Clarity overlay unchanged from screenshot study: formation drift and third-boundary shift at most 0.35band widths; turning-point MAD at most 0.15. Median completed crossing net/absolute-path at least 0.25; lower quartile at least 0.15.",
+        "Recent 30 daily closes: centered 3-close-median residual median at most 0.08band widths and 90th percentile at most 0.20. Latest completed close in inherited broad band tolerance\u221225%to 125%. No current edge or bounce confirmation required.",
+        "No liquidity, indicative carry or fresh-mark eligibility gate. Missing current mark stays unknown; outside current marks flagged. Complete valid consecutive DAILY OHLCV required. Ratios use synchronized leg closes, never nonsynchronous leg wicks.",
+        "Prefer 180/360context before 90-only, strict geometry, multiple passing windows, lower shift+MAD, higher crossing efficiency, longer window. Retain longest passing window per canonical alphabetical chart pair; not a long/short recommendation.",
+        "The old list included 42manual vetoes and 50discretionary priority choices; this button reproduces its numerical 268matches on the original snapshot, not human chart decisions or guaranteed profit. No saved manual veto is imposed on future data."
+      ],
+      "sources": [
+        "research/clean_bases_button_2026-10-20/contract.json",
+        "setup-search/clean_bases.py",
+        "research/reference_clean_ranges_2026-10-20/plan.json",
+        "research/reference_clean_ranges_2026-10-20/manual_review.json"
+      ],
+      "engine": "clean_bases",
+      "status": "Research screen",
+      "frame": "daily",
+      "revision": "2026-10-20-clean-bases-v1"
+    }
+  ]
+}

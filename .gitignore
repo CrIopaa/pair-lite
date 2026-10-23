@@ -1,0 +1,6 @@
+src/
+tools/
+tests/
+private/
+.DS_Store
+._*

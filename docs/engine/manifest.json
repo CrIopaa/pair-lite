@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-23T19:44:35.752Z",
+  "seedId": "pair-lite-1792784422989",
+  "seedSummary": {
+    "createdAt": "2026-10-23T19:44:35.752Z",
+    "serverTime": 1792784675973,
+    "cutoffs": {
+      "daily": 1792713600000,
+      "four": 1792771200000,
+      "hourly": 1792782000000
+    },
+    "contracts": 517,
+    "mode": "four",
+    "errors": [],
+    "counts": {
+      "daily": 517,
+      "four": 517,
+      "hourly": 0
+    }
+  },
+  "quoteAsOf": 1792784675973,
+  "assets": {
+    "python.zip": {
+      "sha256": "2ba9d0724556d319545833f592209f57f5699e07f05319c177baf2a72c747fe1",
+      "bytes": 66159
+    },
+    "daily-history.json.gz": {
+      "sha256": "ea00f9c86d50eb9dd95cd8c27e88d31399e689ae6ff1ff6b49ee57dc727b8087",
+      "bytes": 10213027,
+      "packaging": "15 local absolute source/evidence paths converted to project-relative paths. All market values, dates, delivery metadata and original provenance hashes unchanged."
+    },
+    "seed.json.gz": {
+      "sha256": "03eaeff357bf17e268db3d342b82cab3a68f457b0251578195186329b9bd12b3",
+      "bytes": 16592863
+    }
+  }
+}
